@@ -6,27 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		04BE02CE2DCC9DB4002EB567 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04BE02B82DCC9DB3002EB567 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 04BE02BF2DCC9DB3002EB567;
-			remoteInfo = QuitSmoking;
-		};
-		04BE02D82DCC9DB4002EB567 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04BE02B82DCC9DB3002EB567 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 04BE02BF2DCC9DB3002EB567;
-			remoteInfo = QuitSmoking;
-		};
-/* End PBXContainerItemProxy section */
+/* Begin PBXBuildFile section */
+		045121832DD25318008D1499 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 045121822DD25318008D1499 /* FirebaseFirestore */; };
+		04A8ECF92DD0D3B9004CAAEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04A8ECF82DD0D3B9004CAAEA /* FirebaseAuth */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04BE02C02DCC9DB3002EB567 /* QuitSmoking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuitSmoking.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04BE02CD2DCC9DB4002EB567 /* QuitSmokingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuitSmokingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04BE02D72DCC9DB4002EB567 /* QuitSmokingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuitSmokingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0468D3342DD0EB3100AB8BA2 /* QuitSmoking (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuitSmoking (iOS).entitlements"; sourceTree = "<group>"; };
+		0468D3352DD1036A00AB8BA2 /* QuitSmoking--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "QuitSmoking--iOS--Info.plist"; sourceTree = "<group>"; };
+		04BE02C02DCC9DB3002EB567 /* QuitSmoking (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuitSmoking (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,32 +40,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04BE02CA2DCC9DB4002EB567 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04BE02D42DCC9DB4002EB567 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				04A8ECF92DD0D3B9004CAAEA /* FirebaseAuth in Frameworks */,
+				045121832DD25318008D1499 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A8ECF72DD0D3B9004CAAEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04BE02B72DCC9DB3002EB567 = {
 			isa = PBXGroup;
 			children = (
+				0468D3352DD1036A00AB8BA2 /* QuitSmoking--iOS--Info.plist */,
+				0468D3342DD0EB3100AB8BA2 /* QuitSmoking (iOS).entitlements */,
 				04BE02C22DCC9DB3002EB567 /* QuitSmoking */,
 				04BE02D02DCC9DB4002EB567 /* QuitSmokingTests */,
 				04BE02DA2DCC9DB4002EB567 /* QuitSmokingUITests */,
+				04A8ECF72DD0D3B9004CAAEA /* Frameworks */,
 				04BE02C12DCC9DB3002EB567 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +71,7 @@
 		04BE02C12DCC9DB3002EB567 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04BE02C02DCC9DB3002EB567 /* QuitSmoking.app */,
-				04BE02CD2DCC9DB4002EB567 /* QuitSmokingTests.xctest */,
-				04BE02D72DCC9DB4002EB567 /* QuitSmokingUITests.xctest */,
+				04BE02C02DCC9DB3002EB567 /* QuitSmoking (iOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +79,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04BE02BF2DCC9DB3002EB567 /* QuitSmoking */ = {
+		04BE02BF2DCC9DB3002EB567 /* QuitSmoking (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking" */;
+			buildConfigurationList = 04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking (iOS)" */;
 			buildPhases = (
 				04BE02BC2DCC9DB3002EB567 /* Sources */,
 				04BE02BD2DCC9DB3002EB567 /* Frameworks */,
@@ -110,58 +94,14 @@
 			fileSystemSynchronizedGroups = (
 				04BE02C22DCC9DB3002EB567 /* QuitSmoking */,
 			);
-			name = QuitSmoking;
+			name = "QuitSmoking (iOS)";
 			packageProductDependencies = (
+				04A8ECF82DD0D3B9004CAAEA /* FirebaseAuth */,
+				045121822DD25318008D1499 /* FirebaseFirestore */,
 			);
 			productName = QuitSmoking;
-			productReference = 04BE02C02DCC9DB3002EB567 /* QuitSmoking.app */;
+			productReference = 04BE02C02DCC9DB3002EB567 /* QuitSmoking (iOS).app */;
 			productType = "com.apple.product-type.application";
-		};
-		04BE02CC2DCC9DB4002EB567 /* QuitSmokingTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04BE02E42DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmokingTests" */;
-			buildPhases = (
-				04BE02C92DCC9DB4002EB567 /* Sources */,
-				04BE02CA2DCC9DB4002EB567 /* Frameworks */,
-				04BE02CB2DCC9DB4002EB567 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04BE02CF2DCC9DB4002EB567 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				04BE02D02DCC9DB4002EB567 /* QuitSmokingTests */,
-			);
-			name = QuitSmokingTests;
-			packageProductDependencies = (
-			);
-			productName = QuitSmokingTests;
-			productReference = 04BE02CD2DCC9DB4002EB567 /* QuitSmokingTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		04BE02D62DCC9DB4002EB567 /* QuitSmokingUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04BE02E72DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmokingUITests" */;
-			buildPhases = (
-				04BE02D32DCC9DB4002EB567 /* Sources */,
-				04BE02D42DCC9DB4002EB567 /* Frameworks */,
-				04BE02D52DCC9DB4002EB567 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04BE02D92DCC9DB4002EB567 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				04BE02DA2DCC9DB4002EB567 /* QuitSmokingUITests */,
-			);
-			name = QuitSmokingUITests;
-			packageProductDependencies = (
-			);
-			productName = QuitSmokingUITests;
-			productReference = 04BE02D72DCC9DB4002EB567 /* QuitSmokingUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,14 +116,6 @@
 					04BE02BF2DCC9DB3002EB567 = {
 						CreatedOnToolsVersion = 16.3;
 					};
-					04BE02CC2DCC9DB4002EB567 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 04BE02BF2DCC9DB3002EB567;
-					};
-					04BE02D62DCC9DB4002EB567 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 04BE02BF2DCC9DB3002EB567;
-					};
 				};
 			};
 			buildConfigurationList = 04BE02BB2DCC9DB3002EB567 /* Build configuration list for PBXProject "QuitSmoking" */;
@@ -195,34 +127,21 @@
 			);
 			mainGroup = 04BE02B72DCC9DB3002EB567;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				04A8ECF62DD0D205004CAAEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04BE02C12DCC9DB3002EB567 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04BE02BF2DCC9DB3002EB567 /* QuitSmoking */,
-				04BE02CC2DCC9DB4002EB567 /* QuitSmokingTests */,
-				04BE02D62DCC9DB4002EB567 /* QuitSmokingUITests */,
+				04BE02BF2DCC9DB3002EB567 /* QuitSmoking (iOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		04BE02BE2DCC9DB3002EB567 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04BE02CB2DCC9DB4002EB567 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04BE02D52DCC9DB4002EB567 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,34 +158,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04BE02C92DCC9DB4002EB567 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04BE02D32DCC9DB4002EB567 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		04BE02CF2DCC9DB4002EB567 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 04BE02BF2DCC9DB3002EB567 /* QuitSmoking */;
-			targetProxy = 04BE02CE2DCC9DB4002EB567 /* PBXContainerItemProxy */;
-		};
-		04BE02D92DCC9DB4002EB567 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 04BE02BF2DCC9DB3002EB567 /* QuitSmoking */;
-			targetProxy = 04BE02D82DCC9DB4002EB567 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		04BE02DF2DCC9DB4002EB567 /* Debug */ = {
@@ -395,23 +287,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "QuitSmoking (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZYYYHVKDH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QuitSmoking--iOS--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stko.QuitSmoking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -423,98 +323,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "QuitSmoking (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZYYYHVKDH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QuitSmoking--iOS--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stko.QuitSmoking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		04BE02E52DCC9DB4002EB567 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PZYYYHVKDH;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stko.QuitSmokingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuitSmoking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuitSmoking";
-			};
-			name = Debug;
-		};
-		04BE02E62DCC9DB4002EB567 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PZYYYHVKDH;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stko.QuitSmokingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuitSmoking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuitSmoking";
-			};
-			name = Release;
-		};
-		04BE02E82DCC9DB4002EB567 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PZYYYHVKDH;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stko.QuitSmokingUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QuitSmoking;
-			};
-			name = Debug;
-		};
-		04BE02E92DCC9DB4002EB567 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PZYYYHVKDH;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stko.QuitSmokingUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QuitSmoking;
 			};
 			name = Release;
 		};
@@ -530,7 +366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking" */ = {
+		04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04BE02E22DCC9DB4002EB567 /* Debug */,
@@ -539,25 +375,31 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04BE02E42DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmokingTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04BE02E52DCC9DB4002EB567 /* Debug */,
-				04BE02E62DCC9DB4002EB567 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		04BE02E72DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmokingUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04BE02E82DCC9DB4002EB567 /* Debug */,
-				04BE02E92DCC9DB4002EB567 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04A8ECF62DD0D205004CAAEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		045121822DD25318008D1499 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04A8ECF62DD0D205004CAAEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		04A8ECF82DD0D3B9004CAAEA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04A8ECF62DD0D205004CAAEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04BE02B82DCC9DB3002EB567 /* Project object */;
 }
