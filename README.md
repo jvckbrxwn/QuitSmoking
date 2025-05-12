@@ -17,6 +17,14 @@ Sign In with Apple, and real-time updates using snapshot listeners.
 
 ---
 
+## 📋 TBD
+- 🎉 Fireworks when you add a non smonking day
+- 🔙 Sign out behavior
+- 📋 Last changes date to display
+- 🔔 Notifications with some nice and motivating texts
+
+---
+
 ## 📲 Getting Started
 
 ### Prerequisites
