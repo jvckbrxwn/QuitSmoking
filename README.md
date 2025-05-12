@@ -1,5 +1,7 @@
 # 🚭 QuitSmoking App
 
+Description was generated with ChatGPT (I'll change ReadMe in the future)
+
 This is a SwiftUI + Firebase iOS application designed to help users track their smoke-free days. Originally forked from another project, this version includes improvements such as Firestore integration, 
 Sign In with Apple, and real-time updates using snapshot listeners.
 
@@ -31,5 +33,3 @@ Sign In with Apple, and real-time updates using snapshot listeners.
 git clone https://github.com/your-user/quit-smoking-app.git
 cd quit-smoking-app
 open QuitSmoking.xcodeproj
-
-Description was generated with ChatGPT (I'll change ReadMe in the future)
