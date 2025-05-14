@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		045121832DD25318008D1499 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 045121822DD25318008D1499 /* FirebaseFirestore */; };
+		0499FF0C2DD4D52200C6D701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0499FF0B2DD4D52200C6D701 /* Assets.xcassets */; };
 		04A8ECF92DD0D3B9004CAAEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04A8ECF82DD0D3B9004CAAEA /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0468D3342DD0EB3100AB8BA2 /* QuitSmoking (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuitSmoking (iOS).entitlements"; sourceTree = "<group>"; };
-		0468D3352DD1036A00AB8BA2 /* QuitSmoking--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "QuitSmoking--iOS--Info.plist"; sourceTree = "<group>"; };
-		04BE02C02DCC9DB3002EB567 /* QuitSmoking (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuitSmoking (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0468D3342DD0EB3100AB8BA2 /* QuitSmoking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuitSmoking.entitlements; sourceTree = "<group>"; };
+		0468D3352DD1036A00AB8BA2 /* QuitSmoking--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuitSmoking--iOS--Info.plist"; sourceTree = "<group>"; };
+		0499FF0B2DD4D52200C6D701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04BE02C02DCC9DB3002EB567 /* QuitSmoking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuitSmoking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -59,19 +61,20 @@
 			isa = PBXGroup;
 			children = (
 				0468D3352DD1036A00AB8BA2 /* QuitSmoking--iOS--Info.plist */,
-				0468D3342DD0EB3100AB8BA2 /* QuitSmoking (iOS).entitlements */,
+				0468D3342DD0EB3100AB8BA2 /* QuitSmoking.entitlements */,
 				04BE02C22DCC9DB3002EB567 /* QuitSmoking */,
 				04BE02D02DCC9DB4002EB567 /* QuitSmokingTests */,
 				04BE02DA2DCC9DB4002EB567 /* QuitSmokingUITests */,
 				04A8ECF72DD0D3B9004CAAEA /* Frameworks */,
 				04BE02C12DCC9DB3002EB567 /* Products */,
+				0499FF0B2DD4D52200C6D701 /* Assets.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
 		04BE02C12DCC9DB3002EB567 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04BE02C02DCC9DB3002EB567 /* QuitSmoking (iOS).app */,
+				04BE02C02DCC9DB3002EB567 /* QuitSmoking.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,9 +82,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04BE02BF2DCC9DB3002EB567 /* QuitSmoking (iOS) */ = {
+		04BE02BF2DCC9DB3002EB567 /* QuitSmoking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking (iOS)" */;
+			buildConfigurationList = 04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking" */;
 			buildPhases = (
 				04BE02BC2DCC9DB3002EB567 /* Sources */,
 				04BE02BD2DCC9DB3002EB567 /* Frameworks */,
@@ -94,13 +97,13 @@
 			fileSystemSynchronizedGroups = (
 				04BE02C22DCC9DB3002EB567 /* QuitSmoking */,
 			);
-			name = "QuitSmoking (iOS)";
+			name = QuitSmoking;
 			packageProductDependencies = (
 				04A8ECF82DD0D3B9004CAAEA /* FirebaseAuth */,
 				045121822DD25318008D1499 /* FirebaseFirestore */,
 			);
 			productName = QuitSmoking;
-			productReference = 04BE02C02DCC9DB3002EB567 /* QuitSmoking (iOS).app */;
+			productReference = 04BE02C02DCC9DB3002EB567 /* QuitSmoking.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -135,7 +138,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04BE02BF2DCC9DB3002EB567 /* QuitSmoking (iOS) */,
+				04BE02BF2DCC9DB3002EB567 /* QuitSmoking */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0499FF0C2DD4D52200C6D701 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "QuitSmoking (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = QuitSmoking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZYYYHVKDH;
@@ -299,7 +303,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "QuitSmoking (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = QuitSmoking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZYYYHVKDH;
@@ -335,7 +339,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking (iOS)" */ = {
+		04BE02E12DCC9DB4002EB567 /* Build configuration list for PBXNativeTarget "QuitSmoking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04BE02E22DCC9DB4002EB567 /* Debug */,

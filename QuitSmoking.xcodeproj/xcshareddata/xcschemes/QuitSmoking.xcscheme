@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04BE02BF2DCC9DB3002EB567"
-               BuildableName = "QuitSmoking (iOS).app"
-               BlueprintName = "QuitSmoking (iOS)"
+               BuildableName = "QuitSmoking.app"
+               BlueprintName = "QuitSmoking"
                ReferencedContainer = "container:QuitSmoking.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04BE02BF2DCC9DB3002EB567"
-            BuildableName = "QuitSmoking (iOS).app"
-            BlueprintName = "QuitSmoking (iOS)"
+            BuildableName = "QuitSmoking.app"
+            BlueprintName = "QuitSmoking"
             ReferencedContainer = "container:QuitSmoking.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -86,8 +86,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04BE02BF2DCC9DB3002EB567"
-            BuildableName = "QuitSmoking (iOS).app"
-            BlueprintName = "QuitSmoking (iOS)"
+            BuildableName = "QuitSmoking.app"
+            BlueprintName = "QuitSmoking"
             ReferencedContainer = "container:QuitSmoking.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
