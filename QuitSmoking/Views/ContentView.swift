@@ -28,6 +28,9 @@ struct ContentView: View {
         .task {
             await nsdController.RetriveNonSmokingDays()
         }
+        .onAppear {
+            NotificationManager.shared.scheduleDailyNotification(title: "Quit Smoking", body: "It's time to track you non-smoking day 🚭! You're doing great!", hour: 20, minute: 0, repeats: true)
+        }
     }
 }
 
