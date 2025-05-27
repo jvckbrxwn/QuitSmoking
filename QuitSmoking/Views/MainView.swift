@@ -9,7 +9,6 @@ import SwiftUI
 import FirebaseAuth
 
 struct MainView: View {
-    @State private var text = "Loading…"
     @State public var nsdController: NonSmokingDaysController
     var body: some View {
         VStack {
