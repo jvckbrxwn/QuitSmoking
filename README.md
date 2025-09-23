@@ -22,6 +22,11 @@ Sign In with Apple, and real-time updates using snapshot listeners.
 ## 📋 TBD
 - 🎉 Fireworks when you add a non-smonking day
 - 🔙 Sign out behavior
+- ⚙️ Setting
+  - 📆 Pick notification date to display
+  -  🔔🔕 Turn on/off notifications (not recommended to do that)
+- 🥗 Prepare app for publishing
+- 🪙 Admob (at leats, to think about that)
 
 ---
 
