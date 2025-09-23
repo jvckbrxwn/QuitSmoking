@@ -13,15 +13,15 @@ Sign In with Apple, and real-time updates using snapshot listeners.
 - 🔁 **Sort of Auto-login** support via Firebase Auth state persistence  
 - 🔥 **Firestore integration** for tracking non-smoking days  
 - 📡 **Real-time updates** with Firestore snapshot listeners [WIP]
-- 🎯 **SwiftUI-based UI** for modern iOS experience (but very simple) 
+- 🎯 **SwiftUI-based UI** for modern iOS experience (but very simple)
+- 🔔 **Notifications** with some nice and motivating texts
+- 📋 **Last changes date** to display
 
 ---
 
 ## 📋 TBD
 - 🎉 Fireworks when you add a non-smonking day
 - 🔙 Sign out behavior
-- 📋 Last changes date to display
-- 🔔 Notifications with some nice and motivating texts
 
 ---
 
