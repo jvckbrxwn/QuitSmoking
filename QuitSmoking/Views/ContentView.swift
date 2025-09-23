@@ -24,7 +24,7 @@ struct ContentView: View {
                     }
                 
                 // Tab 2
-                SettingsView()
+                SettingsView(nsdController: nsd)
                     .navigationTitle("Settings")
                     .tabItem {
                         Label("Settings", systemImage: "gearshape.fill")
@@ -35,7 +35,7 @@ struct ContentView: View {
             await nsd.GetNonSmokingDays()
         }
         .onAppear {
-            NotificationManager.shared.scheduleDailyNotification(title: "Quit Smoking", body: "It's time to track you non-smoking day 🚭! You're doing great!", hour: 20, minute: 0, repeats: true)
+            NotificationManager.shared.scheduleDailyNotification(title: "Quit Smoking", body: "It's time to track you non-smoking day 🚭! You're doing great!", hour: 20, minute: 30, repeats: true)
         }
     }
     
