@@ -15,11 +15,11 @@ A SwiftUI + Firebase iOS application designed to help users track their smoke-fr
 - 🔕 **Toggle notifications** on/off from settings
 - ⚙️ **Settings screen** for notification preferences and sign-out
 - 📋 **Last tracking date** display
+- 🎉 **Fireworks effect** on adding a non-smoking day
 
 ---
 
 ## 📋 TBD
-- 🎉 Fireworks when you add a non-smoking day
 - 🥗 Prepare app for publishing
 - 🪙 AdMob integration
 

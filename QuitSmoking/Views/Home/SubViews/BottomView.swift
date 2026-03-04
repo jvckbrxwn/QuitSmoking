@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BottomView: View {
     @State public var nsdController: NonSmokingDaysController
+    @Binding var showFireworks: Bool
 
     private let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -63,6 +64,10 @@ struct BottomView: View {
 
     func addNonSmokingDay() {
         print("You're awsome")
+        showFireworks = false
+        DispatchQueue.main.async {
+            showFireworks = true
+        }
         Task {
             await nsdController.AddNonSmokingDay()
         }
