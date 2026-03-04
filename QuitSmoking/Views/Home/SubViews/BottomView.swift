@@ -20,15 +20,26 @@ struct BottomView: View {
 
     var body: some View {
         VStack {
-            Text("Last tracking change date")
-                .font(.caption)
-                .bold()
-                .foregroundStyle(.gray)
+            if nsdController.nonSmokingDays.isLoading {
+                RoundedRectangle(cornerRadius: 6)
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: 180, height: 14)
+                    .shimmer()
+                RoundedRectangle(cornerRadius: 6)
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: 140, height: 14)
+                    .shimmer()
+            } else {
+                Text("Last tracking change date")
+                    .font(.caption)
+                    .bold()
+                    .foregroundStyle(.gray)
 
-            Text("\(dateFormatter.string(from: nsdController.nonSmokingDays.lastTrackDate))")
-                .font(.caption)
-                .bold()
-                .foregroundStyle(.gray)
+                Text("\(dateFormatter.string(from: nsdController.nonSmokingDays.lastTrackDate))")
+                    .font(.caption)
+                    .bold()
+                    .foregroundStyle(.gray)
+            }
 
             Button(action: addNonSmokingDay) {
                 Text("Add days")

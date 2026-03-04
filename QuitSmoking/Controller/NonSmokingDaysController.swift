@@ -20,15 +20,22 @@ class NonSmokingDaysController {
     @State var nonSmokingDays = NonSmokingDaysData()
 
     func GetNonSmokingDays() async {
+        nonSmokingDays.isLoading = true
         nonSmokingDays.days = defaults.integer(forKey: valueKey)
         let dateStr = defaults.string(forKey: trackingLastDateKey);
         nonSmokingDays.lastTrackDate = ((dateStr != nil) ? DateFormatter().date(from: dateStr!) : Date.now)!
 
         do {
-            guard userController.GetUser().uid != "" else { return }
+            guard userController.GetUser().uid != "" else {
+                nonSmokingDays.isLoading = false
+                return
+            }
             let userUID = userController.GetUser().uid
             let snapshot = try await db.collection("users").document(userUID).getDocument()
-            guard let days = snapshot.data()?[valueKey, default: 0] as? Int else { return }
+            guard let days = snapshot.data()?[valueKey, default: 0] as? Int else {
+                nonSmokingDays.isLoading = false
+                return
+            }
 
             if nonSmokingDays.days != days {
                 if nonSmokingDays.days < days {
@@ -43,6 +50,7 @@ class NonSmokingDaysController {
         } catch {
             print("Can't update days from firebase firestore")
         }
+        nonSmokingDays.isLoading = false
     }
 
     func GetTrackingLastDate() async -> Date {

@@ -12,4 +12,5 @@ import FirebaseCore
 @Observable class NonSmokingDaysData{
     var days: Int = 0
     var lastTrackDate: Date = Date.now
+    var isLoading: Bool = true
 }

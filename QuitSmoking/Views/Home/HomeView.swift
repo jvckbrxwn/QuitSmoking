@@ -25,10 +25,8 @@ struct HomeView: View {
         .padding(.all)
         .padding(.bottom, 40)
         .overlay {
-            if showFireworks {
-                FireworksView(isActive: $showFireworks)
-                    .ignoresSafeArea()
-            }
+            FireworksView(isActive: $showFireworks)
+                .ignoresSafeArea()
         }
     }
 }
