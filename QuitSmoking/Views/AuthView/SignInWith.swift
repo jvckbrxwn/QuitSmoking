@@ -92,35 +92,23 @@ class SignInWithAppleViewModel {
 }
 
 struct SignInWith: View {
-    var sessionData: SessionData = SessionData()
     var viewModel: SignInWithAppleViewModel
-
-    @State var isUserLoggedIn: Bool = false
 
     init() {
         viewModel = SignInWithAppleViewModel()
     }
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                TopBarView()
-                Spacer()
-                SignInWithAppleButton {
-                    request in viewModel.handleSignInWithAppleRequest(request)
-                } onCompletion: {
-                    result in viewModel.handleSignInWithAppleComplete(result)
-                    if case .success = result {
-                        isUserLoggedIn.toggle()
-                    }
-                }
-                .frame(width: 300, height: 50)
-                .cornerRadius(8)
+        VStack {
+            TopBarView()
+            Spacer()
+            SignInWithAppleButton {
+                request in viewModel.handleSignInWithAppleRequest(request)
+            } onCompletion: {
+                result in viewModel.handleSignInWithAppleComplete(result)
             }
-            .navigationDestination(isPresented: $isUserLoggedIn) {
-                ContentView()
-                    .navigationBarBackButtonHidden(true)
-            }
+            .frame(width: 300, height: 50)
+            .cornerRadius(8)
         }
     }
 }

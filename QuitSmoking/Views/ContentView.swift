@@ -12,7 +12,12 @@ import SwiftUI
 
 struct ContentView: View {
     private var nsd = NonSmokingDaysController()
-    
+    var sessionHandler: SessionHandler
+
+    init(sessionHandler: SessionHandler) {
+        self.sessionHandler = sessionHandler
+    }
+
     var body: some View {
         NavigationStack {
             TabView {
@@ -22,9 +27,9 @@ struct ContentView: View {
                     .tabItem{
                         Label("Home", systemImage: "house.fill")
                     }
-                
+
                 // Tab 2
-                SettingsView(nsdController: nsd)
+                SettingsView(nsdController: nsd, sessionHandler: sessionHandler)
                     .navigationTitle("Settings")
                     .tabItem {
                         Label("Settings", systemImage: "gearshape.fill")
@@ -35,15 +40,13 @@ struct ContentView: View {
             await nsd.GetNonSmokingDays()
         }
         .onAppear {
-            NotificationManager.shared.scheduleDailyNotification(title: "Quit Smoking", body: "It's time to track you non-smoking day 🚭! You're doing great!", hour: 20, minute: 30, repeats: true)
+            let saved = NotificationManager.shared.getSavedNotificationTime()
+            NotificationManager.shared.rescheduleNotification(hour: saved.hour, minute: saved.minute)
         }
     }
     
-    func Click() {
-        print("Clicked to settings")
-    }
 }
 
 #Preview {
-    ContentView()
+    ContentView(sessionHandler: SessionHandler())
 }

@@ -82,6 +82,35 @@ final class NotificationManager: NSObject, ObservableObject, UNUserNotificationC
 }
 
 extension NotificationManager {
+    private static let notificationHourKey = "NotificationHour"
+    private static let notificationMinuteKey = "NotificationMinute"
+    private static let defaultHour = 20
+    private static let defaultMinute = 30
+
+    func getSavedNotificationTime() -> (hour: Int, minute: Int) {
+        let defaults = UserDefaults.standard
+        let hour = defaults.object(forKey: Self.notificationHourKey) as? Int ?? Self.defaultHour
+        let minute = defaults.object(forKey: Self.notificationMinuteKey) as? Int ?? Self.defaultMinute
+        return (hour, minute)
+    }
+
+    func saveNotificationTime(hour: Int, minute: Int) {
+        let defaults = UserDefaults.standard
+        defaults.set(hour, forKey: Self.notificationHourKey)
+        defaults.set(minute, forKey: Self.notificationMinuteKey)
+    }
+
+    func rescheduleNotification(hour: Int, minute: Int) {
+        removeScheduledNotifications()
+        scheduleDailyNotification(
+            title: "Quit Smoking",
+            body: "It's time to track you non-smoking day 🚭! You're doing great!",
+            hour: hour,
+            minute: minute,
+            repeats: true
+        )
+    }
+
     /// Schedule a notification at the given hour and minute every day (or non-repeating if repeats = false).
     func scheduleDailyNotification(
         id: String = UUID().uuidString,

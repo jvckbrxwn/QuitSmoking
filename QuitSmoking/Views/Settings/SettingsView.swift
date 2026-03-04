@@ -9,31 +9,48 @@ import SwiftUI
 
 struct SettingsView: View {
     var nsdController: NonSmokingDaysController
-    
+    var sessionHandler: SessionHandler
+    @State private var selectedTime: Date = {
+        let saved = NotificationManager.shared.getSavedNotificationTime()
+        var components = DateComponents()
+        components.hour = saved.hour
+        components.minute = saved.minute
+        return Calendar.current.date(from: components) ?? Date()
+    }()
+
     var body: some View {
-        DatePicker("Update notification time", selection: .constant(Date()), displayedComponents: .hourAndMinute)
+        VStack {
+            DatePicker("Update notification time", selection: $selectedTime, displayedComponents: .hourAndMinute)
+                .padding()
+                .onChange(of: selectedTime) {
+                    let components = Calendar.current.dateComponents([.hour, .minute], from: selectedTime)
+                    let hour = components.hour ?? 20
+                    let minute = components.minute ?? 30
+                    NotificationManager.shared.saveNotificationTime(hour: hour, minute: minute)
+                    NotificationManager.shared.rescheduleNotification(hour: hour, minute: minute)
+                }
+
+            Spacer()
+            Button("Sign Out") {
+                // Call a function to handle the sign out process
+                // authManager.signOut()
+                // Optionally dismiss the current view
+                // dismiss()
+
+                signOut()
+            }
             .padding()
-
-        Spacer()
-        Button("Sign Out") {
-            // Call a function to handle the sign out process
-            // authManager.signOut()
-            // Optionally dismiss the current view
-            // dismiss()
-
-            signOut()
+            .controlSize(ControlSize.extraLarge)
+            .buttonStyle(.bordered) // Or any style you prefer
+            .tint(.blue)
         }
-        .padding()
-        .controlSize(ControlSize.extraLarge)
-        .buttonStyle(.bordered) // Or any style you prefer
-        .tint(.blue)
     }
 
     func signOut() {
-        print("Hello?")
+        sessionHandler.signOut()
     }
 }
 
 #Preview {
-    SettingsView(nsdController: NonSmokingDaysController())
+    SettingsView(nsdController: NonSmokingDaysController(), sessionHandler: SessionHandler())
 }
