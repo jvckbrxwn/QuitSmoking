@@ -1,32 +1,27 @@
 # 🚭 QuitSmoking App
 
-Description was generated with ChatGPT (I'll change ReadMe in the future)
-
-This is a SwiftUI + Firebase iOS application designed to help users track their smoke-free days. Originally forked from another project, this version includes improvements such as Firestore integration, 
-Sign In with Apple, and real-time updates using snapshot listeners.
+A SwiftUI + Firebase iOS application designed to help users track their smoke-free days. Includes Firestore integration, Sign In with Apple, configurable notifications, and a settings screen.
 
 ---
 
 ## ✨ Features
 
-- 🔒 **Sign In with Apple** via Firebase Authentication  
-- 🔁 **Sort of Auto-login** support via Firebase Auth state persistence  
-- 🔥 **Firestore integration** for tracking non-smoking days  
-- 📡 **Real-time updates** with Firestore snapshot listeners [WIP]
-- 🎯 **SwiftUI-based UI** for modern iOS experience (but very simple)
-- 🔔 **Notifications** with some nice and motivating texts
-- 📋 **Last changes date** to display
+- 🔒 **Sign In with Apple** via Firebase Authentication
+- 🔁 **Auto-login** via Firebase Auth state persistence
+- 🚪 **Sign out** from the settings screen
+- 🔥 **Firestore integration** for tracking non-smoking days
+- 🎯 **SwiftUI-based UI** for modern iOS experience
+- 🔔 **Daily motivational notifications** with configurable time
+- 🔕 **Toggle notifications** on/off from settings
+- ⚙️ **Settings screen** for notification preferences and sign-out
+- 📋 **Last tracking date** display
 
 ---
 
 ## 📋 TBD
-- 🎉 Fireworks when you add a non-smonking day
-- 🔙 Sign out behavior
-- ⚙️ Setting
-  - 📆 Pick notification date to display
-  -  🔔🔕 Turn on/off notifications (not recommended to do that)
-- 🥗 Prepare app for publishing
-- 🪙 Admob (at leats, to think about that)
+- 🎉 Fireworks when you add a non-smoking day
+- 🥗 Prepare app for publishing
+- 🪙 AdMob integration
 
 ---
 
@@ -34,8 +29,8 @@ Sign In with Apple, and real-time updates using snapshot listeners.
 
 ### Prerequisites
 
-- Xcode 15+  
-- Firebase iOS SDK (installed via Swift Package Manager)  
+- Xcode 15+
+- Firebase iOS SDK (installed via Swift Package Manager)
 - A Firebase project with:
   - **Firestore** enabled
   - **Authentication** enabled (Apple sign-in configured)
@@ -46,3 +41,4 @@ Sign In with Apple, and real-time updates using snapshot listeners.
 git clone https://github.com/your-user/quit-smoking-app.git
 cd quit-smoking-app
 open QuitSmoking.xcodeproj
+```
