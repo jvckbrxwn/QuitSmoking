@@ -107,7 +107,8 @@ struct SignInWith: View {
             } onCompletion: {
                 result in viewModel.handleSignInWithAppleComplete(result)
             }
-            .frame(width: 300, height: 50)
+            .frame(height: 50)
+            .frame(maxWidth: 375)
             .cornerRadius(8)
         }
     }

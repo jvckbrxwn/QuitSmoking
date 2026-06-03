@@ -27,6 +27,7 @@ struct HomeView: View {
         .overlay {
             FireworksView(isActive: $showFireworks)
                 .ignoresSafeArea()
+                .accessibilityHidden(true)
         }
     }
 }

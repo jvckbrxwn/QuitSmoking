@@ -14,7 +14,7 @@ struct MainView: View {
         VStack {
             Text("Smoke-free days logged")
                 .bold()
-                .font(.system(size: 25))
+                .font(.title2)
             if nsdController.nonSmokingDays.isLoading {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.gray.opacity(0.3))
@@ -24,9 +24,12 @@ struct MainView: View {
             } else {
                 Text("\(nsdController.nonSmokingDays.days)")
                     .bold()
-                    .font(.system(size: 30))
+                    .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
                     .padding(.top, 10)
             }
         }
+        .accessibilityElement(children: .combine)
     }
 }

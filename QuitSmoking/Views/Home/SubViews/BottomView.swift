@@ -33,24 +33,18 @@ struct BottomView: View {
                 Text("Last updated")
                     .font(.caption)
                     .bold()
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.secondary)
 
                 Text("\(dateFormatter.string(from: nsdController.nonSmokingDays.lastTrackDate))")
                     .font(.caption)
                     .bold()
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.secondary)
             }
 
-            Button(action: addNonSmokingDay) {
-                Text("Log a Day")
-                    .padding()
-                    .foregroundColor(.white)
-                    .bold()
-            }
-            .frame(width: 200, height: 50)
-            .background(Color.purple)
-            .clipShape(.buttonBorder)
-            .shadow(color: .purple, radius: 15, y: 5)
+            Button("Log a Day", action: addNonSmokingDay)
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .bold()
             .contextMenu {
                 Button("Reset to Zero", action: {
                     Task {

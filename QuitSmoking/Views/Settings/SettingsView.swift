@@ -42,7 +42,6 @@ struct SettingsView: View {
             .padding()
             .controlSize(ControlSize.extraLarge)
             .buttonStyle(.bordered) // Or any style you prefer
-            .tint(.blue)
         }
     }
 

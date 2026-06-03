@@ -87,6 +87,7 @@ class FireworksViewModel {
 }
 
 struct FireworksView: View {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Binding var isActive: Bool
     @State private var viewModel = FireworksViewModel()
     @State private var canvasSize: CGSize = .zero
@@ -118,6 +119,10 @@ struct FireworksView: View {
         .allowsHitTesting(false)
         .onChange(of: isActive) { _, newValue in
             if newValue {
+                guard !reduceMotion else {
+                    isActive = false
+                    return
+                }
                 viewModel.launch(in: canvasSize)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                     isActive = false

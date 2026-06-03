@@ -14,20 +14,21 @@ struct TopBarView: View {
         VStack{
             HStack{
                 Image(systemName: "smoke.fill")
-                    .foregroundStyle(.cyan)
+                    .foregroundStyle(Color.accentColor)
+                    .accessibilityHidden(true)
                 Text("Quit Smoking")
                     .font(.title)
+                    .accessibilityAddTraits(.isHeader)
             }
-            .frame(width: 300, height: 50)
             .bold()
-            
+
             HStack{
                 Image(systemName: "heart.rectangle")
                     .foregroundStyle(.red)
+                    .accessibilityHidden(true)
                 Text(subtitle)
                     .font(.headline)
             }
-            .frame(width: 300, height: 50)
         }.padding()
     }
 }
