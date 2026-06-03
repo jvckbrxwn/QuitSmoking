@@ -104,7 +104,7 @@ extension NotificationManager {
         removeScheduledNotifications()
         scheduleDailyNotification(
             title: "Quit Smoking",
-            body: "It's time to track you non-smoking day 🚭! You're doing great!",
+            body: "Time to log your smoke-free day 🚭.",
             hour: hour,
             minute: minute,
             repeats: true

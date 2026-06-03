@@ -12,7 +12,7 @@ struct MainView: View {
     @State public var nsdController: NonSmokingDaysController
     var body: some View {
         VStack {
-            Text("Non-smoking days:")
+            Text("Smoke-free days logged")
                 .bold()
                 .font(.system(size: 25))
             if nsdController.nonSmokingDays.isLoading {

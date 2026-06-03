@@ -13,7 +13,7 @@ struct HomeView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            TopBarView()
+            TopBarView(subtitle: nsdController.nonSmokingDays.days > 0 ? "You're doing great" : "Day one starts now")
                 .padding(.top)
             Spacer()
             MainView(nsdController: nsdController)

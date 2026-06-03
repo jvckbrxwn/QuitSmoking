@@ -20,7 +20,7 @@ struct SettingsView: View {
 
     var body: some View {
         VStack {
-            DatePicker("Update notification time", selection: $selectedTime, displayedComponents: .hourAndMinute)
+            DatePicker("Daily reminder", selection: $selectedTime, displayedComponents: .hourAndMinute)
                 .padding()
                 .onChange(of: selectedTime) {
                     let components = Calendar.current.dateComponents([.hour, .minute], from: selectedTime)

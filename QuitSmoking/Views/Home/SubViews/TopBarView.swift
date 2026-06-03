@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct TopBarView: View {
+    var subtitle: String = "Track your smoke-free days"
     var body: some View{
         VStack{
             HStack{
@@ -23,7 +24,7 @@ struct TopBarView: View {
             HStack{
                 Image(systemName: "heart.rectangle")
                     .foregroundStyle(.red)
-                Text("You're doing great")
+                Text(subtitle)
                     .font(.headline)
             }
             .frame(width: 300, height: 50)

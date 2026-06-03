@@ -30,7 +30,7 @@ struct BottomView: View {
                     .frame(width: 140, height: 14)
                     .shimmer()
             } else {
-                Text("Last tracking change date")
+                Text("Last updated")
                     .font(.caption)
                     .bold()
                     .foregroundStyle(.gray)
@@ -42,7 +42,7 @@ struct BottomView: View {
             }
 
             Button(action: addNonSmokingDay) {
-                Text("Add days")
+                Text("Log a Day")
                     .padding()
                     .foregroundColor(.white)
                     .bold()
@@ -52,13 +52,13 @@ struct BottomView: View {
             .clipShape(.buttonBorder)
             .shadow(color: .purple, radius: 15, y: 5)
             .contextMenu {
-                Button("Reset Days", action: {
+                Button("Reset to Zero", action: {
                     Task {
                         await nsdController.ResetNonSmokingDays()
                     }
                 })
 
-                Button("Negate day", action: {
+                Button("Subtract a Day", action: {
                     Task {
                         await nsdController.NegateNonSmokingDay()
                     }
