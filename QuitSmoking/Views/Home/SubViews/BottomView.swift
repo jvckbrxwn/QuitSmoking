@@ -66,7 +66,6 @@ struct BottomView: View {
     }
 
     func logNonSmokingDay() {
-        print("You're awsome")
         let wasFirstLog = nsdController.nonSmokingDays.days == 0
         showFireworks = false
         DispatchQueue.main.async {

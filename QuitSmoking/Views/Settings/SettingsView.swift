@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    var nsdController: NonSmokingDaysController
     var sessionHandler: SessionHandler
     @State private var selectedTime: Date = {
         let saved = NotificationManager.shared.getSavedNotificationTime()
@@ -35,11 +34,6 @@ struct SettingsView: View {
 
             Spacer()
             Button("Sign Out") {
-                // Call a function to handle the sign out process
-                // authManager.signOut()
-                // Optionally dismiss the current view
-                // dismiss()
-
                 signOut()
             }
             .padding()
@@ -54,5 +48,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(nsdController: NonSmokingDaysController(), sessionHandler: SessionHandler())
+    SettingsView(sessionHandler: SessionHandler())
 }

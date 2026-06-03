@@ -10,10 +10,6 @@ import CryptoKit
 import FirebaseAuth
 import SwiftUI
 
-@Observable class SessionData {
-    var isUserLoggedIn: Bool = false
-}
-
 @Observable class SignInWithAppleViewModel {
     fileprivate var currentNonce: String?
     fileprivate var errorMessage: String?

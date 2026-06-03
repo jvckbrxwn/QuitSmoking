@@ -30,7 +30,7 @@ struct ContentView: View {
                     }
 
                 // Tab 2
-                SettingsView(nsdController: nsd, sessionHandler: sessionHandler)
+                SettingsView(sessionHandler: sessionHandler)
                     .navigationTitle("Settings")
                     .tabItem {
                         Label("Settings", systemImage: "gearshape.fill")
