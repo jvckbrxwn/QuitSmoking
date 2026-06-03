@@ -5,6 +5,7 @@
 //  Created by Mac on 18.08.2025.
 //
 
+import FirebaseCore
 import SwiftUI
 
 struct SettingsView: View {
@@ -48,5 +49,8 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(sessionHandler: SessionHandler())
+    // SessionHandler() touches Auth.auth(); previews don't run @main's init,
+    // so Firebase must be configured here (see CLAUDE.md: Firebase init order).
+    if FirebaseApp.app() == nil { FirebaseApp.configure() }
+    return SettingsView(sessionHandler: SessionHandler())
 }

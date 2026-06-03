@@ -52,5 +52,8 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(sessionHandler: SessionHandler())
+    // SessionHandler() touches Auth.auth(); previews don't run @main's init,
+    // so Firebase must be configured here (see CLAUDE.md: Firebase init order).
+    if FirebaseApp.app() == nil { FirebaseApp.configure() }
+    return ContentView(sessionHandler: SessionHandler())
 }
