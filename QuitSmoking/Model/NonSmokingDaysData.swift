@@ -13,4 +13,6 @@ import FirebaseCore
     var days: Int = 0
     var lastTrackDate: Date = Date.now
     var isLoading: Bool = true
+    var isSaving: Bool = false
+    var lastError: String? = nil
 }

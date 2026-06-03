@@ -11,25 +11,33 @@ import FirebaseAuth
 struct MainView: View {
     @State public var nsdController: NonSmokingDaysController
     var body: some View {
-        VStack {
-            Text("Smoke-free days logged")
-                .bold()
-                .font(.title2)
-            if nsdController.nonSmokingDays.isLoading {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(width: 60, height: 30)
-                    .shimmer()
-                    .padding(.top, 10)
-            } else {
-                Text("\(nsdController.nonSmokingDays.days)")
-                    .bold()
-                    .font(.system(.largeTitle, design: .rounded, weight: .bold))
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-                    .padding(.top, 10)
+        if !nsdController.nonSmokingDays.isLoading && nsdController.nonSmokingDays.days == 0 {
+            ContentUnavailableView {
+                Label("No days logged yet", systemImage: "calendar.badge.plus")
+            } description: {
+                Text("Tap “Log a Day” below to start your streak.")
             }
+        } else {
+            VStack {
+                Text("Smoke-free days logged")
+                    .bold()
+                    .font(.title2)
+                if nsdController.nonSmokingDays.isLoading {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: 60, height: 30)
+                        .shimmer()
+                        .padding(.top, 10)
+                } else {
+                    Text("\(nsdController.nonSmokingDays.days)")
+                        .bold()
+                        .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                        .padding(.top, 10)
+                }
+            }
+            .accessibilityElement(children: .combine)
         }
-        .accessibilityElement(children: .combine)
     }
 }

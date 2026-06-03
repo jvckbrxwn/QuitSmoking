@@ -45,6 +45,7 @@ struct BottomView: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .bold()
+                .disabled(nsdController.nonSmokingDays.isSaving || nsdController.nonSmokingDays.isLoading)
             .contextMenu {
                 Button("Reset to Zero", action: {
                     Task {

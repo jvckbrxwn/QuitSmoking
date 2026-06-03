@@ -14,7 +14,7 @@ import SwiftUI
     var isUserLoggedIn: Bool = false
 }
 
-class SignInWithAppleViewModel {
+@Observable class SignInWithAppleViewModel {
     fileprivate var currentNonce: String?
     fileprivate var errorMessage: String?
 
@@ -32,7 +32,8 @@ class SignInWithAppleViewModel {
         } else if case let .success(success) = result {
             if let appleIdCredential = success.credential as? ASAuthorizationAppleIDCredential {
                 guard let nonce = currentNonce else {
-                    fatalError("Invalid state in AppleSignInViewModel")
+                    errorMessage = "Invalid state in AppleSignInViewModel"
+                    return
                 }
                 guard let appleIdToken = appleIdCredential.identityToken else {
                     errorMessage = "Apple ID token unavailable"
@@ -51,6 +52,9 @@ class SignInWithAppleViewModel {
                     do {
                         _ = try await Auth.auth().signIn(with: credential)
                     } catch {
+                        await MainActor.run {
+                            errorMessage = "Sign-in failed. Please try again."
+                        }
                         print("Error authenticating with Apple: \(error)")
                     }
                 }
@@ -92,11 +96,7 @@ class SignInWithAppleViewModel {
 }
 
 struct SignInWith: View {
-    var viewModel: SignInWithAppleViewModel
-
-    init() {
-        viewModel = SignInWithAppleViewModel()
-    }
+    @State private var viewModel = SignInWithAppleViewModel()
 
     var body: some View {
         VStack {
@@ -111,6 +111,10 @@ struct SignInWith: View {
             .frame(maxWidth: 375)
             .cornerRadius(8)
         }
+        .alert("Sign-in failed", isPresented: Binding(
+            get: { viewModel.errorMessage != nil },
+            set: { if !$0 { viewModel.errorMessage = nil } }
+        )) { Button("OK", role: .cancel) {} } message: { Text(viewModel.errorMessage ?? "") }
     }
 }
 

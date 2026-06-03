@@ -48,6 +48,7 @@ class NonSmokingDaysController {
             }
 
         } catch {
+            nonSmokingDays.lastError = "Couldn't sync with the cloud. Your count is saved on this device."
             print("Can't update days from firebase firestore")
         }
         nonSmokingDays.isLoading = false
@@ -68,6 +69,7 @@ class NonSmokingDaysController {
     }
 
     func SaveNonSmokingDays() async {
+        nonSmokingDays.isSaving = true
         nonSmokingDays.lastTrackDate = Date.now
 
         defaults.set(nonSmokingDays.days, forKey: valueKey)
@@ -75,12 +77,17 @@ class NonSmokingDaysController {
         defaults.set(dateStr, forKey: trackingLastDateKey)
 
         do {
-            guard userController.GetUser().uid != "" else { return }
+            guard userController.GetUser().uid != "" else {
+                nonSmokingDays.isSaving = false
+                return
+            }
             let userUID = userController.GetUser().uid
             _ = try await db.collection("users").document(userUID).setData([valueKey: nonSmokingDays.days, trackingLastDateKey: nonSmokingDays.lastTrackDate])
         } catch {
+            nonSmokingDays.lastError = "Couldn't sync with the cloud. Your count is saved on this device."
             print("Can't send data to firebase firestore")
         }
+        nonSmokingDays.isSaving = false
     }
 
     func ResetNonSmokingDays() async {

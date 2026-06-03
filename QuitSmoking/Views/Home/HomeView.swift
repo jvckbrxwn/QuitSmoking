@@ -29,5 +29,10 @@ struct HomeView: View {
                 .ignoresSafeArea()
                 .accessibilityHidden(true)
         }
+        .sensoryFeedback(.success, trigger: nsdController.nonSmokingDays.days)
+        .alert("Sync problem", isPresented: Binding(
+            get: { nsdController.nonSmokingDays.lastError != nil },
+            set: { if !$0 { nsdController.nonSmokingDays.lastError = nil } }
+        )) { Button("OK", role: .cancel) {} } message: { Text(nsdController.nonSmokingDays.lastError ?? "") }
     }
 }
