@@ -28,6 +28,9 @@ struct SettingsView: View {
                     let minute = components.minute ?? 30
                     NotificationManager.shared.saveNotificationTime(hour: hour, minute: minute)
                     NotificationManager.shared.rescheduleNotification(hour: hour, minute: minute)
+                    Task {
+                        await NotificationManager.shared.RequestPermissionInContext()
+                    }
                 }
 
             Spacer()

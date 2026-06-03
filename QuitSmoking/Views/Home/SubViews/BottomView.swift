@@ -52,12 +52,6 @@ struct BottomView: View {
             Button("Add Another Day", action: logNonSmokingDay)
             Button("Cancel", role: .cancel) {}
         }
-        .onAppear {
-            Task {
-                let date = await nsdController.GetTrackingLastDate()
-                print(dateFormatter.string(from: date))
-            }
-        }
     }
 
     func addNonSmokingDay() {
@@ -73,12 +67,16 @@ struct BottomView: View {
 
     func logNonSmokingDay() {
         print("You're awsome")
+        let wasFirstLog = nsdController.nonSmokingDays.days == 0
         showFireworks = false
         DispatchQueue.main.async {
             showFireworks = true
         }
         Task {
             await nsdController.AddNonSmokingDay()
+            if wasFirstLog {
+                await NotificationManager.shared.RequestPermissionInContext()
+            }
         }
     }
 }

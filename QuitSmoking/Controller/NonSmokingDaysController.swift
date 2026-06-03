@@ -15,15 +15,20 @@ class NonSmokingDaysController {
     private let db = Firestore.firestore()
     private let defaults = UserDefaults.standard
     private let userController = UserController()
-    private let dateFormatter: DateFormatter = DateFormatter()
+    private let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return df
+    }()
 
     @State var nonSmokingDays = NonSmokingDaysData()
 
     func GetNonSmokingDays() async {
         nonSmokingDays.isLoading = true
         nonSmokingDays.days = defaults.integer(forKey: valueKey)
-        let dateStr = defaults.string(forKey: trackingLastDateKey);
-        nonSmokingDays.lastTrackDate = ((dateStr != nil) ? DateFormatter().date(from: dateStr!) : Date.now)!
+        let dateStr = defaults.string(forKey: trackingLastDateKey)
+        nonSmokingDays.lastTrackDate = dateStr.flatMap { dateFormatter.date(from: $0) } ?? Date.now
+        nonSmokingDays.isLoading = false
 
         do {
             guard userController.GetUser().uid != "" else {
@@ -47,25 +52,15 @@ class NonSmokingDaysController {
                 }
             }
 
+            if let ts = snapshot.get(trackingLastDateKey) as? Timestamp {   // get(_:) -> Any?  (FIRDocumentSnapshot.h:112)
+                nonSmokingDays.lastTrackDate = ts.dateValue()               // (FIRTimestamp.h:63-64)
+            }
+
         } catch {
             nonSmokingDays.lastError = "Couldn't sync with the cloud. Your count is saved on this device."
             print("Can't update days from firebase firestore")
         }
         nonSmokingDays.isLoading = false
-    }
-
-    func GetTrackingLastDate() async -> Date {
-        do {
-            guard userController.GetUser().uid != "" else { return Date.now }
-            let userUID = userController.GetUser().uid
-            let snapshot = try await db.collection("users").document(userUID).getDocument()
-            let dateString = snapshot.data()?[trackingLastDateKey] as! Timestamp
-            let date = dateString.dateValue()
-            nonSmokingDays.lastTrackDate = date
-            return nonSmokingDays.lastTrackDate
-        } catch {
-            return Date.now
-        }
     }
 
     func SaveNonSmokingDays() async {

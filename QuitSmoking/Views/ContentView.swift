@@ -9,6 +9,7 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     private var nsd = NonSmokingDaysController()
@@ -39,9 +40,12 @@ struct ContentView: View {
         .task {
             await nsd.GetNonSmokingDays()
         }
-        .onAppear {
-            let saved = NotificationManager.shared.getSavedNotificationTime()
-            NotificationManager.shared.rescheduleNotification(hour: saved.hour, minute: saved.minute)
+        .task {
+            let settings = await UNUserNotificationCenter.current().notificationSettings()
+            if settings.authorizationStatus == .authorized {
+                let saved = NotificationManager.shared.getSavedNotificationTime()
+                NotificationManager.shared.rescheduleNotification(hour: saved.hour, minute: saved.minute)
+            }
         }
     }
     

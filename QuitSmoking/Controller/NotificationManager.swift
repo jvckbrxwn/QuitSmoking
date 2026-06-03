@@ -6,6 +6,7 @@
 //
 import Foundation
 import SwiftUI
+import UIKit
 import UserNotifications
 
 final class NotificationManager: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
@@ -29,6 +30,16 @@ final class NotificationManager: NSObject, ObservableObject, UNUserNotificationC
                     }
                 }
             }
+    }
+
+    @MainActor func RequestPermissionInContext() async {
+        let center = UNUserNotificationCenter.current()
+        let settings = await center.notificationSettings()            // async, non-throwing
+        switch settings.authorizationStatus {
+        case .notDetermined: _ = try? await center.requestAuthorization(options: [.alert, .badge, .sound])
+        case .denied: if let url = URL(string: UIApplication.openSettingsURLString) { await UIApplication.shared.open(url) }
+        default: break
+        }
     }
 
     func removeScheduledNotifications() {
