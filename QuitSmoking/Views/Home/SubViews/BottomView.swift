@@ -10,6 +10,7 @@ import SwiftUI
 struct BottomView: View {
     @State public var nsdController: NonSmokingDaysController
     @Binding var showFireworks: Bool
+    @State private var showSameDayConfirm = false
 
     private let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -46,19 +47,10 @@ struct BottomView: View {
                 .controlSize(.large)
                 .bold()
                 .disabled(nsdController.nonSmokingDays.isSaving || nsdController.nonSmokingDays.isLoading)
-            .contextMenu {
-                Button("Reset to Zero", action: {
-                    Task {
-                        await nsdController.ResetNonSmokingDays()
-                    }
-                })
-
-                Button("Subtract a Day", action: {
-                    Task {
-                        await nsdController.NegateNonSmokingDay()
-                    }
-                })
-            }
+        }
+        .confirmationDialog("You already logged today. Add another day?", isPresented: $showSameDayConfirm, titleVisibility: .visible) {
+            Button("Add Another Day", action: logNonSmokingDay)
+            Button("Cancel", role: .cancel) {}
         }
         .onAppear {
             Task {
@@ -69,6 +61,17 @@ struct BottomView: View {
     }
 
     func addNonSmokingDay() {
+        // KNOWN LIMITATION: lastTrackDate updates on ANY save including Subtract/Reset,
+        // so this confirm can occasionally appear after a same-day correction. Acceptable —
+        // it only asks, never blocks (taps stay; backfill preserved).
+        if Calendar.current.isDateInToday(nsdController.nonSmokingDays.lastTrackDate) && nsdController.nonSmokingDays.days > 0 {
+            showSameDayConfirm = true
+        } else {
+            logNonSmokingDay()
+        }
+    }
+
+    func logNonSmokingDay() {
         print("You're awsome")
         showFireworks = false
         DispatchQueue.main.async {
